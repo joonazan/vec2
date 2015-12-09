@@ -49,6 +49,18 @@ func (self Vector) Normalized() Vector {
 	return Mul(self, 1/self.Length())
 }
 
+func (v Vector) Plus(v2 Vector) Vector {
+	return Add(v, v2)
+}
+
+func (v Vector) Minus(v2 Vector) Vector {
+	return Sub(v, v2)
+}
+
+func (v Vector) Times(r float64) Vector {
+	return Mul(v, r)
+}
+
 func Add(v, u Vector) Vector {
 	return Vector{v.X + u.X, v.Y + u.Y}
 }
