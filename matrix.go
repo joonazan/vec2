@@ -40,7 +40,7 @@ func Scale(x, y float64) Matrix {
 }
 
 // multiplies m with v as if v was (x, y, 1)
-func (v Vector) Transform(m Matrix) Vector {
+func (m Matrix) Transform(v Vector) Vector {
 	return Vector{
 		m[0]*v.X + m[1]*v.Y + m[2],
 		m[3]*v.X + m[4]*v.Y + m[5],
@@ -48,7 +48,7 @@ func (v Vector) Transform(m Matrix) Vector {
 }
 
 // multiplies m with v as if v was (x, y, 0)
-func (v Vector) TransformDirection(m Matrix) Vector {
+func (m Matrix) TransformDirection(v Vector) Vector {
 	return Vector{
 		m[0]*v.X + m[1]*v.Y,
 		m[3]*v.X + m[4]*v.Y,
